@@ -21,7 +21,6 @@ def render_participant_page(service: GiftExchangeService, email: str) -> None:
                 continue
             theme = themes[assignment.theme_id]
             with st.container(border=True):
-                st.markdown(f"**{theme.name}**")
                 if theme.description:
                     st.caption(theme.description)
-                st.write(f"Buy a gift for **{people[assignment.recipient_id]}**.")
+                st.write(f"Buy **{theme.name}** for **{people[assignment.recipient_id]}**.")

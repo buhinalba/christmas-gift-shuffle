@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<body style="margin:0;padding:0;background:#f4efe9;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0"
+         style="background:#f4efe9;padding:24px 0;">
+    <tr><td align="center">
+      <table role="presentation" width="600" cellpadding="0" cellspacing="0"
+             style="max-width:600px;width:100%;background:#ffffff;border-radius:12px;
+                    overflow:hidden;font-family:Georgia,'Times New Roman',serif;color:#2b2b2b;">
+
+        <tr><td style="background:#b3202a;padding:28px 32px;color:#ffffff;">
+          <div style="font-size:13px;letter-spacing:2px;text-transform:uppercase;">
+            {{ exchange_name }}
+          </div>
+          <div style="font-size:26px;margin-top:6px;">Your gift themes 🎁</div>
+        </td></tr>
+
+        <tr><td style="padding:28px 32px;font-size:16px;line-height:1.5;">
+          <p style="margin:0 0 12px;">Hi {{ buyer_name }},</p>
+          <p style="margin:0 0 20px;">
+            You're Gist Assignments have been shuffled and locked. Here is the theme for each person:
+          </p>
+
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+            {% for g in gifts %}
+            <tr>
+              <td style="padding:12px 0;border-bottom:1px solid #eeeeee;font-weight:bold;">
+                {{ g.recipient }}
+              </td>
+              <td align="right"
+                  style="padding:12px 0;border-bottom:1px solid #eeeeee;color:#b3202a;">
+                {{ g.theme }}
+              </td>
+            </tr>
+            {% endfor %}
+          </table>
+
+          <p style="margin:24px 0 0;">Keep it secret! 🤫</p>
+        </td></tr>
+
+        <tr><td style="padding:16px 32px;background:#faf7f3;font-size:12px;color:#888888;">
+          Sent by Christmas Gift Shuffle
+        </td></tr>
+      </table>
+    </td></tr>
+  </table>
+</body>
+</html>

@@ -1,0 +1,19 @@
+Hi {{ buyer_name }}!
+
+Welcome to {{ exchange_name }}! This isn't your usual one-name draw.
+Here's how it works:
+
+* Everyone gives to everyone. You'll bring a little something for every
+  person in the group, and everyone brings something for you.
+* Every gift has a theme. Next to each name below is the theme for that
+  person's gift. Think of it as a tiny creative challenge.
+* Themes are secret. Only you know which theme goes with whom.
+* No budget, but keep it sensible, the thought matters most!
+* No spoilers! Keep your list to yourself until it's time to unwrap.
+
+YOUR LIST
+{% for g in gifts %}
+  - {{ g.recipient }}: {{ g.theme }}
+{% endfor %}
+
+Happy gifting!

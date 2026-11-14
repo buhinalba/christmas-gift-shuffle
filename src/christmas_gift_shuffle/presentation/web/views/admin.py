@@ -4,7 +4,7 @@ from christmas_gift_shuffle.application.services import AssignmentService
 from christmas_gift_shuffle.domain.entities import Participant, Theme
 from christmas_gift_shuffle.domain.strategies import CyclicAssignmentStrategy
 from christmas_gift_shuffle.presentation.web import auth
-from christmas_gift_shuffle.presentation.web.container import get_repository, get_service
+from christmas_gift_shuffle.presentation.web.container import get_repository, get_service, get_notification_service
 from christmas_gift_shuffle.presentation.web.views.participant import render_participant_page
 
 
@@ -128,3 +128,21 @@ def render() -> None:
             who = st.selectbox("View as", emails)
             render_participant_page(service, who)
 
+        with st.expander("Email assignments to participants"):
+            st.caption("Each person gets only their own recipient and theme.")
+            if st.checkbox("I'm ready to email everyone", key=f"confirm_send_{exchange.id}"):
+                if st.button("Send emails", type="primary", key=f"send_{exchange.id}"):
+                    with st.spinner("Sending..."):
+                        report = get_notification_service().send_assignments(exchange)
+                    st.session_state[f"failed_{exchange.id}"] = set(report.failed)
+                    st.success(f"Sent {len(report.sent)} email(s).")
+                    for email, err in report.failed.items():
+                        st.error(f"{email}: {err}")
+
+            failed = st.session_state.get(f"failed_{exchange.id}")
+            if failed and st.button(f"Retry {len(failed)} failed", key=f"retry_{exchange.id}"):
+                report = get_notification_service().send_assignments(exchange, only=failed)
+                st.session_state[f"failed_{exchange.id}"] = set(report.failed)
+                st.success(f"Sent {len(report.sent)} email(s).")
+                for email, err in report.failed.items():
+                    st.error(f"{email}: {err}")
