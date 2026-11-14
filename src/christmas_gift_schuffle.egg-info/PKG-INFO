@@ -1,8 +1,0 @@
-Metadata-Version: 2.4
-Name: christmas-gift-schuffle
-Version: 0.2.0
-Summary: A generic gift-exchange assignment application.
-Requires-Python: >=3.11
-Requires-Dist: streamlit<2,>=1.40
-Provides-Extra: dev
-Requires-Dist: pytest>=8; extra == "dev"

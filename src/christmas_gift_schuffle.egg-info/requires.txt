@@ -1,4 +1,0 @@
-streamlit<2,>=1.40
-
-[dev]
-pytest>=8
