@@ -1,5 +1,7 @@
-from ...application.interfaces import GiftExchangeRepository
-from ...domain.entities import GiftExchange, Participant, Theme
+from christmas_gift_shuffle.application.interfaces import GiftExchangeRepository
+from christmas_gift_shuffle.domain.entities import GiftExchange, Participant, Theme
+from dataclasses import replace
+
 
 
 class GiftExchangeService:
@@ -24,3 +26,16 @@ class GiftExchangeService:
 
     def delete_draft(self, exchange_id: str) -> None:
         self._repository.delete_draft(exchange_id)
+
+    def update_draft(self, exchange_id: str, name: str,
+                     participants: list[Participant], themes: list[Theme]) -> GiftExchange:
+        exchange = self._repository.get_by_id(exchange_id)
+        if exchange is None:
+            raise ValueError("Exchange not found")
+        if exchange.status.value != "draft":
+            raise ValueError("Only drafts can be edited")
+        updated = replace(exchange, name=name,
+                          participants=tuple(participants), themes=tuple(themes))
+        self._repository.delete_draft(exchange_id)
+        self._repository.save(updated)
+        return updated

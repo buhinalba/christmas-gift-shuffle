@@ -1,9 +1,9 @@
 import pytest
-from christmas_gift_schuffle.application.services import AssignmentService
-from christmas_gift_schuffle.domain.entities import GiftExchange, Participant, Theme
-from christmas_gift_schuffle.domain.strategies import CyclicAssignmentStrategy
-from christmas_gift_schuffle.infrastructure.persistence.sqlite import SQLiteGiftExchangeRepository
-from christmas_gift_schuffle.domain.exceptions import ConfigurationError
+from christmas_gift_shuffle.application.services import AssignmentService
+from christmas_gift_shuffle.domain.entities import GiftExchange, Participant, Theme
+from christmas_gift_shuffle.domain.strategies import CyclicAssignmentStrategy
+from christmas_gift_shuffle.infrastructure.persistence.sqlite import SQLiteGiftExchangeRepository
+from christmas_gift_shuffle.domain.exceptions import ConfigurationError
 
 
 def make_exchange(n=5):

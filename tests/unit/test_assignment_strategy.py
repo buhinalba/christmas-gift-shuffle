@@ -1,7 +1,7 @@
 import pytest
-from christmas_gift_schuffle.application.services import AssignmentService
-from christmas_gift_schuffle.domain.entities import GiftExchange, Participant, Theme
-from christmas_gift_schuffle.domain.strategies import CyclicAssignmentStrategy
+from christmas_gift_shuffle.application.services import AssignmentService
+from christmas_gift_shuffle.domain.entities import GiftExchange, Participant, Theme
+from christmas_gift_shuffle.domain.strategies import CyclicAssignmentStrategy
 
 
 @pytest.mark.parametrize("n", range(2, 31))

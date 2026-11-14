@@ -1,5 +1,5 @@
 import pytest
-from christmas_gift_schuffle.domain.entities import GiftExchange, Participant, Theme
+from christmas_gift_shuffle.domain.entities import GiftExchange, Participant, Theme
 
 
 @pytest.fixture

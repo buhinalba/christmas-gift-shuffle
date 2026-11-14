@@ -1,5 +1,5 @@
 import streamlit as st
-from ....application.services import GiftExchangeService
+from christmas_gift_shuffle.application.services import GiftExchangeService
 
 
 def render_participant_page(service: GiftExchangeService, email: str) -> None:

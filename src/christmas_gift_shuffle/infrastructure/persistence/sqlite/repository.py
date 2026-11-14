@@ -9,7 +9,7 @@ from ....domain.exceptions import ConfigurationError
 class SQLiteGiftExchangeRepository(GiftExchangeRepository):
     """SQLite adapter. Each write is transactional; assignments are immutable after generation."""
 
-    def __init__(self, database_path: str | Path = "data/christmas_gift_schuffle.db"):
+    def __init__(self, database_path: str | Path = "data/christmas_gift_shuffle.db"):
         self.database_path = Path(database_path)
 
     def _connect(self):

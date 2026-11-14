@@ -8,7 +8,7 @@ def create_repository() -> GiftExchangeRepository:
     backend = os.getenv("DATABASE_BACKEND", "sqlite").strip().lower()
     if backend == "sqlite":
         repo = SQLiteGiftExchangeRepository(
-            os.getenv("SQLITE_DATABASE_PATH", "data/christmas_gift_schuffle.db")
+            os.getenv("SQLITE_DATABASE_PATH", "data/christmas_gift_shuffle.db")
         )
         repo.initialize()
         return repo

@@ -1,6 +1,6 @@
 import pytest
-from christmas_gift_schuffle.domain.entities import GiftExchange, Participant, Theme
-from christmas_gift_schuffle.domain.exceptions import ConfigurationError
+from christmas_gift_shuffle.domain.entities import GiftExchange, Participant, Theme
+from christmas_gift_shuffle.domain.exceptions import ConfigurationError
 
 
 def test_requires_n_minus_one_themes(participants):

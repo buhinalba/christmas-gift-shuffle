@@ -16,11 +16,9 @@ Generic gift-exchange assignment application.
 Python 3.11+:
 
 ```bash
-python -m venv .venv
-source .venv/bin/activate        # Windows: .venv\\Scripts\\activate
-pip install -r requirements.txt
+uv sync
 pytest
-streamlit run app.py
+uv run streamlit run app.py
 ```
 
 SQLite defaults to `data/christmas_gift_schuffle.db`. Override with `SQLITE_DATABASE_PATH`.
