@@ -19,7 +19,8 @@ class JinjaAssignmentEmailRenderer:
                gifts: list[GiftLine]) -> RenderedEmail:
         ctx = {"exchange_name": exchange_name, "buyer_name": buyer_name, "gifts": gifts}
         return RenderedEmail(
-            subject=f"Your gift themes: {exchange_name}",
+            subject=f"{exchange_name}",
+            exchange_name = exchange_name,
             text=self._env.get_template("assignment.txt").render(**ctx),
             html=self._env.get_template("assignment.html").render(**ctx),
         )

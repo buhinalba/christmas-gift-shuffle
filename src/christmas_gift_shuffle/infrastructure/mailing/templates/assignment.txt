@@ -1,19 +1,23 @@
-Hi {{ buyer_name }}!
+Hello there {{ buyer_name }}!
 
-Welcome to {{ exchange_name }}! This isn't your usual one-name draw.
+Mr Elf here, reporting live from the workshop at the North Pole. I've been given the important job of handing you your very own secret mission. This isn't your usual one-name draw, by the way.
+
 Here's how it works:
 
 * Everyone gives to everyone. You'll bring a little something for every
   person in the group, and everyone brings something for you.
-* Every gift has a theme. Next to each name below is the theme for that
-  person's gift. Think of it as a tiny creative challenge.
-* Themes are secret. Only you know which theme goes with whom.
-* No budget, but keep it sensible, the thought matters most!
-* No spoilers! Keep your list to yourself until it's time to unwrap.
+* Every gift has a theme. Your list below shows the theme for each person's
+  gift, a tiny creative challenge made just for them.
+* No exact budget, but keep it small.
+* Keep your list to yourself until it's time to unwrap. Not a word!
+  Remember, elves have ears everywhere!
 
 YOUR LIST
 {% for g in gifts %}
-  - {{ g.recipient }}: {{ g.theme }}
+  - Gift {{ g.theme }} for {{ g.recipient }}
 {% endfor %}
 
-Happy gifting!
+Now off you go, and happy thinking!
+
+Mr Elf
+Head of Gift Logistics

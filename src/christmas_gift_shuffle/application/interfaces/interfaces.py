@@ -11,6 +11,7 @@ class GiftLine:
 @dataclass(frozen=True)
 class RenderedEmail:
     subject: str
+    exchange_name: str
     text: str
     html: str
 

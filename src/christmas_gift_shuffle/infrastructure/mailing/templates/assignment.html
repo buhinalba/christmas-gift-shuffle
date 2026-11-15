@@ -9,37 +9,71 @@
                     overflow:hidden;font-family:Georgia,'Times New Roman',serif;color:#2b2b2b;">
 
         <tr><td style="background:#b3202a;padding:28px 32px;color:#ffffff;">
-          <div style="font-size:13px;letter-spacing:2px;text-transform:uppercase;">
-            {{ exchange_name }}
+          <div style="font-size:13px;letter-spacing:2px;text-transform:uppercase;color:#ffffff;">
+            A message from Mr Elf 🧝
           </div>
-          <div style="font-size:26px;margin-top:6px;">Your gift themes 🎁</div>
+          <div style="font-size:26px;margin-top:6px;color:#ffffff;">{{ exchange_name }} 🎁</div>
         </td></tr>
 
-        <tr><td style="padding:28px 32px;font-size:16px;line-height:1.5;">
-          <p style="margin:0 0 12px;">Hi {{ buyer_name }},</p>
-          <p style="margin:0 0 20px;">
-            You're Gist Assignments have been shuffled and locked. Here is the theme for each person:
+        <tr><td style="padding:28px 32px 8px;font-size:16px;line-height:1.5;">
+          <p style="margin:0 0 12px;">Hello there {{ buyer_name }}!</p>
+          <p style="margin:0 0 12px;">
+            Mr Elf here, reporting live from the workshop at the North Pole. I've been
+            given the important job of handing you your very own secret mission! This
+            isn't your usual one-name draw, by the way.
           </p>
+          <p style="margin:0;">Here's how it works:</p>
+        </td></tr>
 
+        <tr><td style="padding:12px 32px 8px;">
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0"
+                 style="background:#faf7f3;border-radius:10px;">
+            <tr><td style="padding:18px 20px;font-size:15px;line-height:1.55;">
+              <p style="margin:0 0 10px;">
+                <strong>🎁 Everyone gives to everyone.</strong> You'll bring a little
+                something for every person in the group, and everyone brings something
+                for you.
+              </p>
+              <p style="margin:0 0 10px;">
+                <strong>🎨 Every gift has a theme.</strong> Your list below shows the
+                theme for each person's gift, a tiny creative challenge made just for
+                them.
+              </p>
+              <p style="margin:0 0 10px;">
+                <strong>💰 No exact budget</strong>, but keep it small.
+              </p>
+              <p style="margin:0;">
+                <strong>🤫 Keep your list to yourself</strong> until it's time to unwrap.
+                Not a word! Remember, elves have ears everywhere!
+              </p>
+            </td></tr>
+          </table>
+        </td></tr>
+
+        <tr><td style="padding:20px 32px 8px;font-size:16px;line-height:1.5;">
+          <p style="margin:0 0 8px;font-size:18px;"><strong>Your list</strong></p>
           <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
             {% for g in gifts %}
             <tr>
-              <td style="padding:12px 0;border-bottom:1px solid #eeeeee;font-weight:bold;">
-                {{ g.recipient }}
-              </td>
-              <td align="right"
-                  style="padding:12px 0;border-bottom:1px solid #eeeeee;color:#b3202a;">
-                {{ g.theme }}
+              <td style="padding:12px 0;border-bottom:1px solid #eeeeee;">
+                Gift <strong style="color:#b3202a;">{{ g.theme }}</strong>
+                for <strong>{{ g.recipient }}</strong>
               </td>
             </tr>
             {% endfor %}
           </table>
+        </td></tr>
 
-          <p style="margin:24px 0 0;">Keep it secret! 🤫</p>
+        <tr><td style="padding:20px 32px 28px;font-size:16px;line-height:1.5;">
+          <p style="margin:0 0 16px;">Now off you go, and happy thinking! 💭</p>
+          <p style="margin:0;">
+            <strong>Mr Elf</strong> 🧝<br>
+            <span style="font-size:14px;color:#777777;">Head of Gift Logistics</span>
+          </p>
         </td></tr>
 
         <tr><td style="padding:16px 32px;background:#faf7f3;font-size:12px;color:#888888;">
-          Sent by Christmas Gift Shuffle
+          Sent with jingle bells from the North Pole workshop 🔔
         </td></tr>
       </table>
     </td></tr>
